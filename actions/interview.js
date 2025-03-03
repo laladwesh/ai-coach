@@ -49,7 +49,6 @@ export async function generateQuiz() {
     const text = response.text();
     const cleanedText = text.replace(/```(?:json)?\n?/g, "").trim();
     const quiz = JSON.parse(cleanedText);
-
     return quiz.questions;
   } catch (error) {
     console.error("Error generating quiz:", error);
@@ -60,13 +59,10 @@ export async function generateQuiz() {
 export async function saveQuizResult(questions, answers, score) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
-
   const user = await db.user.findUnique({
     where: { clerkUserId: userId },
   });
-
   if (!user) throw new Error("User not found");
-
   const questionResults = questions.map((q, index) => ({
     question: q.question,
     answer: q.correctAnswer,
@@ -74,10 +70,8 @@ export async function saveQuizResult(questions, answers, score) {
     isCorrect: q.correctAnswer === answers[index],
     explanation: q.explanation,
   }));
-
   // Get wrong answers
   const wrongAnswers = questionResults.filter((q) => !q.isCorrect);
-
   // Only generate improvement tips if there are wrong answers
   let improvementTip = null;
   if (wrongAnswers.length > 0) {
@@ -87,7 +81,6 @@ export async function saveQuizResult(questions, answers, score) {
           `Question: "${q.question}"\nCorrect Answer: "${q.answer}"\nUser Answer: "${q.userAnswer}"`
       )
       .join("\n\n");
-
     const improvementPrompt = `
       The user got the following ${user.industry} technical interview questions wrong:
 
