@@ -1,3 +1,4 @@
+//data/industries.js
 export const industries = [
   {
     id: "tech",
