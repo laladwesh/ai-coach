@@ -1,32 +1,32 @@
 export const faqs = [
   {
-    question: "What makes AI-Career-Coach unique as a career development tool?",
+    question: "What distinguishes AI-Career-Coach from other career development services?",
     answer:
-      "AI-Career-Coach combines AI-powered career tools with industry-specific insights to help you advance your career. Our platform offers three main features: an intelligent resume builder, a cover letter generator, and an adaptive interview preparation system. Each tool is tailored to your industry and skills, providing personalized guidance for your professional journey.",
+      "AI-Career-Coach integrates advanced AI-driven tools with deep industry expertise to support your career growth. Our suite includes a smart resume creator, a personalized cover letter writer, and a dynamic interview training module—each customized to your field and skill set for maximum impact.",
   },
   {
-    question: "How does AI-Career-Coach create tailored content?",
+    question: "In what way does AI-Career-Coach personalize its content?",
     answer:
-      "AI-Career-Coach learns about your industry, experience, and skills during onboarding. It then uses this information to generate customized resumes, cover letters, and interview questions. The content is specifically aligned with your professional background and industry standards, making it highly relevant and effective.",
+      "During onboarding, AI-Career-Coach gathers details about your professional background, industry, and competencies. It then leverages this data to craft bespoke resumes, cover letters, and interview scenarios that align precisely with your career goals and sector benchmarks.",
   },
   {
-    question: "How accurate and up-to-date are AI-Career-Coach's industry insights?",
+    question: "How does AI-Career-Coach ensure its industry data remains relevant?",
     answer:
-      "We update our industry insights weekly using advanced AI analysis of current market trends. This includes salary data, in-demand skills, and industry growth patterns. Our system constantly evolves to ensure you have the most relevant information for your career decisions.",
+      "Our platform refreshes its market insights every week by analyzing the latest trends, salary figures, and sought-after skills using proprietary AI algorithms. This continuous update process guarantees you have access to the most current intelligence when making career decisions.",
   },
   {
-    question: "Is my data secure with AI-Career-Coach?",
+    question: "How does AI-Career-Coach protect my personal information?",
     answer:
-      "Absolutely. We prioritize the security of your professional information. All data is encrypted and securely stored using industry-standard practices. We use Clerk for authentication and never share your personal information with third parties.",
+      "Your privacy is our priority. We employ robust encryption and secure storage protocols for all user data, alongside Clerk-driven authentication. We never distribute your personal details to external parties without your explicit consent.",
   },
   {
-    question: "How can I track my interview preparation progress?",
+    question: "What tools are available to monitor my interview preparation?",
     answer:
-      "AI-Career-Coach tracks your performance across multiple practice interviews, providing detailed analytics and improvement suggestions. You can view your progress over time, identify areas for improvement, and receive AI-generated tips to enhance your interview skills based on your responses.",
+      "AI-Career-Coach records your performance across practice sessions and delivers comprehensive analytics with targeted recommendations. You can track your improvement over time, pinpoint strengths and weaknesses, and receive AI-generated advice tailored to your interview responses.",
   },
   {
-    question: "Can I edit the AI-generated content?",
+    question: "Am I able to modify the AI-generated materials?",
     answer:
-      "Yes! While AI-Career-Coach generates high-quality initial content, you have full control to edit and customize all generated resumes, cover letters, and other content. Our markdown editor makes it easy to refine the content to perfectly match your needs.",
+      "Absolutely. While AI-Career-Coach produces high-quality draft content, you retain full editing control. Our built-in markdown editor lets you refine and tailor resumes, cover letters, and other documents until they perfectly represent your professional brand.",
   },
 ];
