@@ -19,12 +19,17 @@ import {
 import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
 
+// Header is an async component since it calls checkUser()
 export default async function Header() {
- await checkUser();
+  // Perform any server-side user checks (e.g. role-based rendering)
+  await checkUser();
 
   return (
+    // Fixed top header with backdrop blur and border
     <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+        
+        {/* Logo linking to home */}
         <Link href="/">
           <Image
             src={"/logo.png"}
@@ -35,10 +40,13 @@ export default async function Header() {
           />
         </Link>
 
-        {/* Action Buttons */}
+        {/* Right-side action buttons */}
         <div className="flex items-center space-x-2 md:space-x-4">
+          {/* Visible only when user is signed in */}
           <SignedIn>
+            {/* Link to dashboard */}
             <Link href="/dashboard">
+              {/* Show button on medium and up screens */}
               <Button
                 variant="outline"
                 className="hidden md:inline-flex items-center gap-2"
@@ -46,12 +54,13 @@ export default async function Header() {
                 <LayoutDashboard className="h-4 w-4" />
                 Industry Insights
               </Button>
+              {/* Icon button for smaller screens */}
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
             </Link>
 
-            {/* Growth Tools Dropdown */}
+            {/* Dropdown menu for "Growth Tools" */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button className="flex items-center gap-2">
@@ -60,13 +69,17 @@ export default async function Header() {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
+
               <DropdownMenuContent align="end" className="w-48">
+                {/* Resume Builder link */}
                 <DropdownMenuItem asChild>
                   <Link href="/resume" className="flex items-center gap-2">
                     <FileText className="h-4 w-4" />
                     Build Resume
                   </Link>
                 </DropdownMenuItem>
+
+                {/* Cover Letter Generator link */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/ai-cover-letter"
@@ -76,6 +89,8 @@ export default async function Header() {
                     Cover Letter
                   </Link>
                 </DropdownMenuItem>
+
+                {/* Interview Prep link */}
                 <DropdownMenuItem asChild>
                   <Link href="/interview" className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
@@ -86,12 +101,14 @@ export default async function Header() {
             </DropdownMenu>
           </SignedIn>
 
+          {/* Sign In button visible when user is signed out */}
           <SignedOut>
             <SignInButton>
               <Button variant="outline">Sign In</Button>
             </SignInButton>
           </SignedOut>
 
+          {/* User profile avatar & menu */}
           <SignedIn>
             <UserButton
               appearance={{
