@@ -90,7 +90,7 @@ model IndustryInsight {
   keyTrends     String[]  // Array of current industry trends
   
   // Learning suggestions
-  recommendedSkills String[]  // Skills recommended for the industry
+  recommendedSkills String[] 
   
   lastUpdated   DateTime  @default(now())
   nextUpdate    DateTime  // Scheduled update time
