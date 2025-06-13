@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HeroSection = () => {
+  // Reference to the hero image element
   const imageRef = useRef(null);
 
   useEffect(() => {
     const imageElement = imageRef.current;
 
+    // Function to toggle 'scrolled' class on the hero image when user scrolls
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scrollThreshold = 100;
@@ -22,13 +24,17 @@ const HeroSection = () => {
       }
     };
 
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
+
+    // Clean up on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section className="w-full pt-36 md:pt-48 pb-10">
       <div className="space-y-6 text-center">
+        {/* Title & description */}
         <div className="space-y-6 mx-auto">
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title animate-gradient">
             Your AI Career Coach for
@@ -40,6 +46,8 @@ const HeroSection = () => {
             AI-powered tools for job success.
           </p>
         </div>
+
+        {/* Call-to-action buttons */}
         <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
             <Button size="lg" className="px-8">
@@ -52,6 +60,8 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
+
+        {/* Hero image section with scroll-based animation hook */}
         <div className="hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
             <Image
